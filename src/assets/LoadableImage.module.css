@@ -1,0 +1,46 @@
+.containerImg {
+    background: linear-gradient(90deg, #6d86a6, rgba(165, 231, 147, 0.3) 95%);
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.containerImg::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -150px;
+    top: 0;
+    height: 100%;
+    width: 150px;
+    overflow: hidden;
+    background: linear-gradient(to right, transparent 0%, rgb(119, 206, 190) 50%, transparent 100%);
+    animation: load 1s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+}
+
+@keyframes load {
+    from {
+        left: -150px;
+    }
+    to {
+        left: 100%;
+    }
+}
+
+.containerImgLoaded::before {
+    animation: none;
+}
+
+.image {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 2.5s ease-in-out;
+}
+
+.imageLoaded {
+    opacity: 1;
+}
