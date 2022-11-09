@@ -20,7 +20,7 @@ const pages = [
         route: '/categories',
         title: 'Categories'
     }
-]
+];
 
 const Header = () => {
     const navigate = useNavigate();

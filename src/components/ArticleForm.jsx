@@ -15,10 +15,10 @@ const ArticleForm = props => {
         },
 
         validationSchema: yup.object({
-            title: yup.string().trim()/*.required('Required to fill')*/,
-            text: yup.string().trim()/*.required('Required to fill')*/,
-            author: yup.string().trim()/*.required('Required to fill')*/,
-            category: yup.string().trim()/*.required('Required to fill')*/
+            title: yup.string().trim().required('Required to fill'),
+            text: yup.string().trim().required('Required to fill'),
+            author: yup.string().trim().required('Required to fill'),
+            category: yup.string().trim().required('Required to fill')
         }),
 
         onSubmit: (values, {resetForm}) => {
