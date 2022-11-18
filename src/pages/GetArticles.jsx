@@ -58,7 +58,12 @@ const GetArticles = () => {
         }
     };
 
-    const changeQuantityOfArticles = ({target}) => setArticlesQuantity(target.value);
+    const changeQuantityOfArticles = ({target}) => {
+        if (target.value >= 0) {
+            setArticlesQuantity(target.value);
+        }
+        return 0;
+    };
 
     return (
         <Container>
@@ -68,6 +73,7 @@ const GetArticles = () => {
                         Quantity of articles: | {articlesQuantity || 'all'} | :
                     </span>
                     <input type='number'
+                           min='0'
                            onInput={changeQuantityOfArticles}
                            value={articlesQuantity}/>
                 </Col>

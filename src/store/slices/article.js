@@ -6,7 +6,7 @@ export const articlesSlice = createSlice({
     reducers: {
         addArticle: (state, {payload}) => {
             // const {title, cover, text, author, category} = payload;
-            state.push(payload)
+            state.push(payload);
         }
     }
 });
