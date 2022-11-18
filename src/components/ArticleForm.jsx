@@ -46,6 +46,7 @@ const ArticleForm = props => {
                 <Form.Label>Choose an article cover</Form.Label>
                 <Form.Control
                     type="file"
+                    required
                     onInput={props.onHandleFileSelected}
                 />
             </Form.Group>
