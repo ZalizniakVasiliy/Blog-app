@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ArticlesList from "../components/ArticlesList";
-import {ListGroup} from "react-bootstrap";
+import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
 import RoutesToPages from "../assets/RoutesToPages";
 
@@ -59,9 +59,7 @@ const GetArticles = () => {
     };
 
     const changeQuantityOfArticles = ({target}) => {
-        if (target.value >= 0) {
-            setArticlesQuantity(target.value);
-        }
+        if (target.value >= 0) setArticlesQuantity(target.value);
         return 0;
     };
 
@@ -79,13 +77,19 @@ const GetArticles = () => {
                 </Col>
                 <Col xs={9} className='mt-1 p-2 bg-black rounded-3'>
                     <h1 className='text-center mb-2 text-success'>Articles List</h1>
-                    <Button
-                        variant="outline-success ms-3 mb-2"
-                        onClick={goToMainPage}>Go Back
-                    </Button>
-                    <div onScroll={handleScroll}>
-                        {renderScrollArticlesList(articlesQuantity || allArticles.length)}
+                    <div className="d-flex justify-content-center">
+                        <Button
+                            variant="outline-success ms-3 mb-2"
+                            onClick={goToMainPage}>Go Back
+                        </Button>
                     </div>
+                    {allArticles.length > 0
+                        ?
+                        <div onScroll={handleScroll}>
+                            {renderScrollArticlesList(articlesQuantity || allArticles.length)}
+                        </div>
+                        :
+                        <p className='mt-2 text-center text-danger fs-4'>Articles have not been created yet</p>}
                 </Col>
             </Row>
         </Container>

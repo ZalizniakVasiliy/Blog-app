@@ -15,6 +15,10 @@ const LoadableImage = props => {
             return;
         }
 
+        // if (!isVisible) {
+        //     return;
+        // }
+
         if (imageRef.current) {
             setIsLoaded(true);
         }

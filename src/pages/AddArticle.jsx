@@ -28,10 +28,8 @@ const AddArticle = () => {
     };
 
     const handleFileSelected = async e => {
-        const img = document.createElement('img');
         const selectedFile = e.target.files[0];
-        let imgPath = img.src;
-        imgPath = await readURL(selectedFile);
+        let imgPath = await readURL(selectedFile);
         setCover(imgPath);
     };
 
